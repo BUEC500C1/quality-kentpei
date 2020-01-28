@@ -8,6 +8,8 @@ class Solution:
                 [   1, 'I']]
         str = ''
         i = 0
+        if num <= 0 or num >=4000:
+            return "illegal input"
         while num > 0:
             while dic[i][0] > num:
                 i += 1
