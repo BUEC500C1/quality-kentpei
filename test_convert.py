@@ -11,5 +11,5 @@ def test():
     assert convert_num(13.23) == 'Wrong Type'
     assert convert_num('IV') == "Wrong Type"
     assert convert_num('two') == "Wrong Type"
-    assert convert_num(-1) == "Wrong Input"
-    assert convert_num(4001) == "Wrong Input"
+    assert convert_num(-1) == "illegal input"
+    assert convert_num(4001) == "illegal input"
