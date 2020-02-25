@@ -1,24 +1,15 @@
-def convert_num(self,num):
-        #dic = {1000:'M',900:'CM',500:'D',400:'CD',100:'C',90:'XC',50:'L',40:'XL',
-        #10:'X',9:'IX',5:'V',4:'IV'}
-        if not isinstance(num, int):
-            return "Wrong Type"
-        if num <= 0 or num >= 4000:
-            return "illegal input"
-        dic = [[1000, 'M'], [900, 'CM'], [500, 'D'], [400, 'CD'],
-                [ 100, 'C'], [ 90, 'XC'], [ 50, 'L'], [ 40, 'XL'],
-                [  10, 'X'], [  9, 'IX'], [  5, 'V'], [  4, 'IV'],
-                [   1, 'I']]
-        str = ''
-        i = 0
-        while num > 0:
-            while dic[i][0] > num:
-                i += 1
-            str += dic[i][1]
-            num -= dic[i][0]
-        return str
-'''
-if __name__ == "__main__":
-    s = Solution()
-    print(s.convert(4393))
-'''
+from convert import *
+def test():
+    assert convert_num(1) == 'I'
+    assert convert_num(4) == 'IV'
+    assert convert_num(10) == 'X'
+    assert convert_num(100) == 'C'
+    assert convert_num(90) == 'XC'
+    assert convert_num(400) == 'CD'
+    assert convert_num(1001) == 'MI'
+    assert convert_num(2394) == 'MMCCCXCIV'
+    assert convert_num(13.23) == 'Wrong Type'
+    assert convert_num('IV') == "Wrong Type"
+    assert convert_num('two') == "Wrong Type"
+    assert convert_num(-1) == "Wrong Input"
+    assert convert_num(4001) == "Wrong Input"
